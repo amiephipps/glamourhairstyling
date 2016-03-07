@@ -36,6 +36,11 @@ h6 {
 	@include lineHeight(29);
 }
 
+p {
+	@include fontSize(16);
+	color: $white;
+}
+
 h1,
 h2,
 h3,

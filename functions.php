@@ -106,7 +106,7 @@ add_action( 'after_setup_theme', 'master_theme_setup' );
 // Add all JavaScript files here. Let WordPress add them to our templates automatically instead of writing out own script tags in the header and footer
 function master_theme_scripts() {
 	
-    //wp_enqueue_style( 'master-theme-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic', false ); // theme google fonts
+    wp_enqueue_style( 'master-theme-fonts', 'https://fonts.googleapis.com/css?family=Montserrat|Kaushan+Script', false ); // theme google fonts
     //wp_enqueue_style( 'master-theme-style', get_stylesheet_uri() ); // theme style.css file
 
 	// if ( is_singular('post') && comments_open() && get_option( 'thread_comments' ) ) {
@@ -193,7 +193,7 @@ function master_theme_continue_reading_link() {
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and master_theme_continue_reading_link().
  */
 function master_theme_auto_excerpt_more( $more ) {
-	return ' &hellip;' . hackeryou_continue_reading_link();
+	return ' &hellip;' . master_theme_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'master_theme_auto_excerpt_more' );
 
@@ -341,67 +341,6 @@ function clean_stuff_up() {
 }
 
 add_action('init', 'clean_stuff_up');
-
-
-// Wes Bos blog cutomization:
-
-/**
- * Removes the default styles that are packaged with the Recent Comments widget.
- */
-// function hackeryou_remove_recent_comments_style() {
-// 	global $wp_widget_factory;
-// 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-// }
-// add_action( 'widgets_init', 'hackeryou_remove_recent_comments_style' );
-
-
-// if ( ! function_exists( 'hackeryou_posted_on' ) ) :
-// /**
-//  * Prints HTML with meta information for the current post—date/time and author.
-//  */
-// function hackeryou_posted_on() {
-// 	printf('<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s',
-// 		'meta-prep meta-prep-author',
-// 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-// 			get_permalink(),
-// 			esc_attr( get_the_time() ),
-// 			get_the_date()
-// 		),
-// 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-// 			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-// 			sprintf( esc_attr( 'View all posts by %s'), get_the_author() ),
-// 			get_the_author()
-// 		)
-// 	);
-// }
-// endif;
-
-// if ( ! function_exists( 'hackeryou_posted_in' ) ) :
-// /**
-//  * Prints HTML with meta information for the current post (category, tags and permalink).
-//  */
-// function hackeryou_posted_in() {
-// 	// Retrieves tag list of current post, separated by commas.
-// 	$tag_list = get_the_tag_list( '', ', ' );
-// 	if ( $tag_list ) {
-// 		$posted_in = 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.';
-// 	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-// 		$posted_in = 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.';
-// 	} else {
-// 		$posted_in = 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.';
-// 	}
-// 	// Prints the string, replacing the placeholders.
-// 	printf(
-// 		$posted_in,
-// 		get_the_category_list( ', ' ),
-// 		$tag_list,
-// 		get_permalink(),
-// 		the_title_attribute( 'echo=0' )
-// 	);
-// }
-// endif;
-
-// End of Wes Bes blog customization
 
 
 /* Here are some utility helper functions for use in your templates! */

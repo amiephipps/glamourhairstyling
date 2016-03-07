@@ -1,8 +1,6 @@
 <?php
 /**
 *
-* This is the template that displays all pages or posts by default.
-*
 * @package master_theme
 */
 

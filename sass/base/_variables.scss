@@ -3,30 +3,30 @@
 
 $mainContent: 1080px;
 $width: 95%;
-// $primary-width: 75%;
-// $secondary-width: 25%;
-
 
 // Website Colors
 // --------------------
 
 $almostBlack: #222;
-$mainColor: black;
+$mainColor: #E8766F;
+$secondColor: #7EC4CA;
+$thirdColor: #F2C672;
+$grey: #4C4C4C;
 $white: white;
 
 // Color Usage
 // ------------
 
-$backgroundcolor: $white;
+$backgroundcolor: $grey;
 $text: $almostBlack;
-$linkcolor: $mainColor;
+$linkcolor: $white;
 $hovercolor: $mainColor;
 
 
 // Fonts
 // -----
-$bodyFont: 'Open Sans', sans-serif;
-$headingFont: $bodyFont;
+$bodyFont: 'Montserrat', sans-serif;
+$headingFont: 'Kaushan Script', cursive;
 
 
 // Borders

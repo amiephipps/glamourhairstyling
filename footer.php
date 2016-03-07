@@ -2,36 +2,50 @@
 /**
  * The footer template
  *
- * Contains the closing of <div id="main"> and all content after.
- *
  * @package master_theme
  */
 ?>
-
-<?php // close divs opened in header (#main + #page) ?>
-
-	</div> <!-- #page -->
 	 
-	<footer id="colophon" role="contentinfo" class="siteFooter container">	
-		<nav class="siteNavigation--Footer" role="navigation">
-		    <ul class="siteMenu--Footer" role="menu">
-		    	<li><?php get_template_part('inc/social-links'); ?></li>
-		    	<li>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></a></li>
-		         <?php wp_nav_menu( array( "theme_location" => "footer", "container" => '', 'items_wrap'=> '%3$s' ) ); ?>
-		         <li><a href="<?php echo esc_url( "http://amiephipps.com" ); ?>"><?php esc_html_e('Development by Amie', 'master_theme') ?></a></li>
-		         <li><a href="#top"><?php esc_html_e('Back to Top', 'master_theme'); ?></li>
-		    </ul>
-		</nav>
-	</footer><!-- #colophon -->
+<footer class="footer">
+	<div class="footer--sections">
+		<section class="footer--section1">
+			<p>CONNECT</p>
+			<p>Facebook</p>
+			<p>Email</p>
+		</section>
+		<section class="footer--section2">
+			<div class='googlemaps'>
+				<?php 
+					$googleMaps = get_field( 'google_maps' );
+					echo do_shortcode( $googleMaps );
+				?>
+			</div>
+		</section>
+		<section class="footer--section3">
+			<p>HOURS</p>
+			<p>Tuesday: 9:00am - 8:00pm</p>
+			<p>Wednesday: 9:00am - 8:00pm</p>
+			<p>Thursday: 9:00am - 8:00pm</p>
+			<p>Friday: 9:00am - 8:00pm</p>
+			<p>Saturday: 9:00am - 8:00pm</p>
+			<p>Sunday: Closed</p>
+			<p>Monday: Closed</p>
+		</section>
+	</div>
 
-	<script>
-	/* Google Analytics! */
-	 var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site's ID
-	 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-	 g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-	 s.parentNode.insertBefore(g,s)}(document,"script"));
-	</script>
+	<nav class="footer--copyright">
+	   <p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></a> | <a href="http://amiephipps.com">Developed with love by Amie</a></p>
+	</nav>
+</footer><!-- #colophon -->
 
-	<?php wp_footer(); ?> 
+<script>
+/* Google Analytics! */
+ var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site's ID
+ (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+ g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+ s.parentNode.insertBefore(g,s)}(document,"script"));
+</script>
+
+<?php wp_footer(); ?> 
 </body>
 </html>

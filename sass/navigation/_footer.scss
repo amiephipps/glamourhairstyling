@@ -2,4 +2,33 @@
 =            ## Footer          =
 ================================*/
 
+footer {
+	height: 350px;
+	border-top: 1px solid $white;
+	box-shadow: 0 0 39px -6px black;
+	.footer--sections {
+		@extend .flexParent;
+		section {
+			width: 33.33%;
+		}
+	}
+	.footer--copyright {
+		position: relative; // for back to top button
+		height: 50px;
+		border-top: 1px solid white;
+		background: $mainColor;
+		p {
+			margin: 0;
+			text-align: center;
+			line-height: 50px;
+			a {
+				transition: 0.5s;
+				display: inline-block;
+				&:hover {
+					color: $grey;
+				}
+			}
+		}
+	}
+}
 /*=====  End of Footer  ======*/

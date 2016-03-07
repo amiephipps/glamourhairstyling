@@ -2,6 +2,73 @@
 =            ## Header           =
 ================================*/
 
+header {
+	.banner {
+		@extend .flexParent;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid $white;
+		box-shadow: 1px 1px 39px -6px $grey;
+		width: 100%;
+		background: $grey;
+		position: fixed;
+		ul {
+			color: $white;
+			@include fontSize(14);
+			font-weight: bold;
+			text-transform: uppercase;
+			list-style-type: none;
+			@extend .flexParent;
+			a {
+				display: inline-block;
+				padding: 25px;
+				margin: 30px 15px 0;
+				transition: 0.5s all;
+			}
+		}
+		h1 {
+			margin-left: 40px;
+			a {
+				transition: 0.5s all;
+			}
+		}
+		p {
+			position: absolute;
+			top: 5px;
+			right: 40px;
+			color: $mainColor;
+		}
+	}
+	img {
+		margin-top: 100px;
+	}
+}
 
+.sliding-u-l-r {
+  text-decoration: none;
+  position: relative;
+}
+
+.sliding-u-l-r:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 2px solid $mainColor;
+  transition: 0.5s;
+}
+
+.sliding-u-l-r:hover:after {
+  width: 100%;
+}
+
+.js-expand {
+	display: block;
+}
+
+.hamburger {
+	display: none;
+}
 
 /*=====  End of Header  ======*/
