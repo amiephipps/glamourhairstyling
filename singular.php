@@ -6,25 +6,68 @@
 
 get_header(); ?>
 
-<main> 
-	<div class="container">
+<main> 		
+	<section class="hours container">			
 
-		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+		<?php while( has_sub_field('hours') ): ?>
+			<div class="dayOfWeek">
+				<h6><?php the_sub_field('day'); ?></h6>
+				<p><?php the_sub_field('opening_time'); ?> - <?php the_sub_field('closing_time'); ?></p>
+			</div>
+		<?php endwhile; ?>
+		
+		<div class="dayOfWeek">
+			<h6>Sunday</h6>
+			<p>closed</p>
+		</div>
+		<div class="dayOfWeek">
+			<h6>Monday</h6>
+			<p>closed</p>
+		</div>
 
-			<?php get_template_part('content'); ?>
+	</section>
 
-		   <?php if ( !is_singular('page') ) : // this is not a page ?>
-		      <?php comments_template( '', true ); ?>
-				<?php get_template_part( 'inc/pagination' ); ?>
-		   <?php endif; ?>
+	<section class="about">
+		<div class="aboutContainer container">
+			<div>
+				<?php the_content(); ?>
+			</div>	
+			<div class="special">
+				<h5>Special</h5>
+				<p><?php the_field( 'special' ); ?></p>
+			</div>
+		</div>
+	</section>
 
-		<?php endwhile; // end of the loop. ?>
+	<section class="services">
 
-	</div> <!-- container -->
+		<div class="cuts">
+			<h2>CUTS</h2>
+			<?php while( has_sub_field('cut_services') ): ?>
+				<p class="nameOfService"><?php the_sub_field('cut_service_name'); ?></p>
+				<p><?php the_sub_field('cut_service_price'); ?></p>
+			<?php endwhile; ?>
+		</div>
+
+		<div class="color">
+			<h2>COLOR</h2>
+			<?php while( has_sub_field('color_services') ): ?>
+				<p class="nameOfService"><?php the_sub_field('color_service_name'); ?></p>
+				<p><?php the_sub_field('color_service_price'); ?></p>
+			<?php endwhile; ?>
+		</div>
+
+		<div class="otherServices">
+			<h2>OTHER</h2>
+			<?php while( has_sub_field('other_services') ): ?>
+				<p class="nameOfService"><?php the_sub_field('other_service_name'); ?></p>
+				<p><?php the_sub_field('other_service_price'); ?></p>
+			<?php endwhile; ?>
+			
+		</div>
+
+	</section>
+
 </main> <!-- main -->
-
-<?php if ( !is_singular( 'page' ) ) : // this is not a page ?>
-	<?php get_sidebar(); ?>
-<?php endif; ?>
 
 <?php get_footer(); ?>

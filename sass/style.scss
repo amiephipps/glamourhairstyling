@@ -20,4 +20,75 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 @import "layout";
 @import "allblog";
 
+.hours {
+	@extend .flexParent;
+	justify-content: space-between;
+	.dayOfWeek {
+		width: 12%;
+		margin: 4rem 0;
+		background: $mainColor;
+		text-align: center;
+	}
+}
 
+.about {
+	background: $grey;
+	.aboutContainer {
+		@extend .flexParent;
+		justify-content: space-between;
+		align-items: center;
+		div {
+			width: 45%;
+			margin: 3rem 0;
+			h5, p {
+				color: $white;
+			}
+			p {
+				line-height: 2;
+			}
+		}
+		.special {
+			text-align: center;
+			width: 35%;
+			border: 1px solid $white;
+			height: 150px;
+			border-radius: 5px;
+		}
+	}
+}
+
+.services {
+	@extend .flexParent;
+	div {
+		width: 33.33%;
+		padding: 3rem 0;
+		h2 {
+			color: $white;
+			text-align: center;
+		}
+		p {
+			margin: 0;
+			color: $grey;
+			text-align: center;
+		}
+		.nameOfService {
+			float: left;
+			color: $white;
+		}
+		// .serviceImage {
+		// 	width: 100%;
+		// 	img {
+		// 		width: 110%;
+		// 	}
+		// }
+	}
+	.cuts {
+		background: $mainColor;
+	}
+	.color {
+		background: $secondColor;
+	}
+	.otherServices {
+		background: $thirdColor;
+	}
+}

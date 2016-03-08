@@ -14,12 +14,12 @@
 			<p>Email</p>
 		</section>
 		<section class="footer--section2">
-			<div class='googlemaps'>
+<!-- 			<div class='googlemaps'>
 				<?php 
 					$googleMaps = get_field( 'google_maps' );
 					echo do_shortcode( $googleMaps );
 				?>
-			</div>
+			</div> -->
 		</section>
 		<section class="footer--section3">
 			<p>HOURS</p>

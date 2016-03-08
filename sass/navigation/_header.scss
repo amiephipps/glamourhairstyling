@@ -3,6 +3,7 @@
 ================================*/
 
 header {
+	box-shadow: 1px 1px 39px -6px $grey;
 	.banner {
 		@extend .flexParent;
 		justify-content: space-between;
@@ -12,6 +13,7 @@ header {
 		width: 100%;
 		background: $grey;
 		position: fixed;
+		z-index: 999;
 		ul {
 			color: $white;
 			@include fontSize(14);
