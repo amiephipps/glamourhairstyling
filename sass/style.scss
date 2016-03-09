@@ -21,6 +21,10 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 @import "allblog";
 
 .hours {
+	position: absolute;
+	top: 78em;
+	left: 50%;
+	transform: translateX(-50%);
 	@extend .flexParent;
 	justify-content: space-between;
 	.dayOfWeek {
@@ -28,17 +32,24 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 		margin: 4rem 0;
 		background: $mainColor;
 		text-align: center;
+		box-shadow: 0 0 5px $grey;
+		h6 {
+			@include fontSize(30);
+			font-family: serif;
+			color: white;
+		}
 	}
 }
 
 .about {
 	background: $grey;
+	padding: 3rem 0;
 	.aboutContainer {
 		@extend .flexParent;
 		justify-content: space-between;
 		align-items: center;
 		div {
-			width: 45%;
+			width: 55%;
 			margin: 3rem 0;
 			h5, p {
 				color: $white;
@@ -50,21 +61,50 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 		.special {
 			text-align: center;
 			width: 35%;
-			border: 1px solid $white;
-			height: 150px;
-			border-radius: 5px;
+			border: 8px solid #fff;
+			border-radius: 15px;
+			padding: 1%;
+			h2 {
+				color: $mainColor;
+				font-family: serif;
+			}
 		}
 	}
 }
 
 .services {
 	@extend .flexParent;
-	div {
+	> div {
 		width: 33.33%;
-		padding: 3rem 0;
-		h2 {
+		padding: 0 1%;
+		> div {
+			@extend .flexParent;
+			justify-content: center;
+			align-items: center;
+		}
+		ul {
+			list-style-type: none;
+			margin-bottom: 8%;
+			li {
+				@include fontSize(16);
+				padding: 1em 0;
+			}
+		}
+		ul:nth-of-type(1) {
+			width: 70%;
+			li:not(:last-child) {
+				border-bottom: 1px dotted $grey;
+			}
+		}
+		ul:nth-of-type(2) {
+			li {
+				color: $grey;
+			}
+		}
+		h1 {
 			color: $white;
 			text-align: center;
+			font-family: serif;
 		}
 		p {
 			margin: 0;
@@ -72,15 +112,8 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 			text-align: center;
 		}
 		.nameOfService {
-			float: left;
 			color: $white;
 		}
-		// .serviceImage {
-		// 	width: 100%;
-		// 	img {
-		// 		width: 110%;
-		// 	}
-		// }
 	}
 	.cuts {
 		background: $mainColor;
@@ -90,5 +123,18 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 	}
 	.otherServices {
 		background: $thirdColor;
+	}
+}
+
+.contact {
+	.contact--container {
+		div {
+			@extend .flexParent;
+			justify-content: space-between;
+			padding: 3rem 0;
+			section {
+				width: 48%;
+			}
+		}	
 	}
 }

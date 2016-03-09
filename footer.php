@@ -9,18 +9,17 @@
 <footer class="footer">
 	<div class="footer--sections">
 		<section class="footer--section1">
+			<nav class="footer--copyright">
+			   <p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></a> | <a href="http://amiephipps.com">Developed with love by Amie</a></p>
+			</nav>
+		</section>
+
+		<section class="footer--section2">
 			<p>CONNECT</p>
 			<p>Facebook</p>
 			<p>Email</p>
 		</section>
-		<section class="footer--section2">
-<!-- 			<div class='googlemaps'>
-				<?php 
-					$googleMaps = get_field( 'google_maps' );
-					echo do_shortcode( $googleMaps );
-				?>
-			</div> -->
-		</section>
+
 		<section class="footer--section3">
 			<p>HOURS</p>
 			<p>Tuesday: 9:00am - 8:00pm</p>
@@ -32,10 +31,6 @@
 			<p>Monday: Closed</p>
 		</section>
 	</div>
-
-	<nav class="footer--copyright">
-	   <p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></a> | <a href="http://amiephipps.com">Developed with love by Amie</a></p>
-	</nav>
 </footer><!-- #colophon -->
 
 <script>
