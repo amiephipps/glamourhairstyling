@@ -20,30 +20,85 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 @import "layout";
 @import "allblog";
 
+.wrapper {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.js-expand {
+	display: block !important;
+}
+
 .hours {
 	position: absolute;
-	top: 78em;
+	top: 775px;
 	left: 50%;
 	transform: translateX(-50%);
 	@extend .flexParent;
 	justify-content: space-between;
 	.dayOfWeek {
 		width: 12%;
-		margin: 4rem 0;
 		background: $mainColor;
 		text-align: center;
 		box-shadow: 0 0 5px $grey;
+		border-radius: 8px;
 		h6 {
 			@include fontSize(30);
 			font-family: serif;
-			color: white;
+			color: $white;
+			transition: 0.5s all;
 		}
+		p {
+			transition: 0.5s all;
+		}
+		&:hover {
+			h6 {
+				color: $almostBlack;
+			}
+			p {
+				color: $white;
+			}
+		}
+		@include bp(little) {
+			width: 18%;
+			margin: 14px 14px 0 0;
+		}
+		@include bp(tiny) {
+			width: 21%;
+			h6 {
+				@include fontSize(24);
+			}
+		}
+		@include bp(tiny) {
+			width: 28%;
+		}
+	}
+	@include bp(medium) {
+		top: 550px;
+	}
+	@include bp(little) {
+		top: 305px;
+		justify-content: flex-start;
+	}
+	@media all and (max-width: 736px) {
+		.hours {
+			top: 200px;
+		}	
+	}
+	// @include bp(tiny) {
+	// 	top: 100px;
+	// }
+	@include bp(tiny) {
+		position: static;
+		transform: none;
+		margin: 0 auto;
+		padding: 4rem 0;
 	}
 }
 
 .about {
 	background: $grey;
-	padding: 3rem 0;
+	padding: 10rem 0;
 	.aboutContainer {
 		@extend .flexParent;
 		justify-content: space-between;
@@ -69,6 +124,13 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 				font-family: serif;
 			}
 		}
+		@include bp(tiny) {
+			flex-direction: column;
+			div,
+			.special {
+				width: 80%;
+			}
+		}
 	}
 }
 
@@ -76,7 +138,7 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 	@extend .flexParent;
 	> div {
 		width: 33.33%;
-		padding: 0 1%;
+		padding: 10rem 1%;
 		> div {
 			@extend .flexParent;
 			justify-content: center;
@@ -94,6 +156,9 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 			width: 70%;
 			li:not(:last-child) {
 				border-bottom: 1px dotted $grey;
+			}
+			@include bp(mini) {
+				width: 65%;
 			}
 		}
 		ul:nth-of-type(2) {
@@ -124,17 +189,81 @@ Tags: fluid-layout, editor-style, featured-images, theme-options, light, respons
 	.otherServices {
 		background: $thirdColor;
 	}
+	@include bp(medium) {
+		flex-direction: column;
+		> div {
+			width: 100%;
+		}
+	}
+	@include bp(tiny) {
+		.cuts,
+		.color,
+		.otherServices {
+			padding: 10rem 3%;
+		}
+	}
 }
 
 .contact {
-	.contact--container {
-		div {
-			@extend .flexParent;
-			justify-content: space-between;
-			padding: 3rem 0;
-			section {
-				width: 48%;
+	padding: 10rem 0;
+}
+
+.contact--container {
+	div {
+		@extend .flexParent;
+		justify-content: space-between;
+		padding: 3rem 0;
+		.contact--section1 {
+			width: 55%;
+		}
+		.contact--section2 {
+			width: 40%;
+		}
+		@include bp(tiny) {
+			flex-direction: column;
+			.contact--section1,
+			.contact--section2 {
+				width: 90%;
+				margin: 0 auto;
 			}
-		}	
+			.contact--section2 {
+				padding-top: 10%;
+			}
+		}
+	}	
+	h2 {
+		font-family: serif;
+		text-align: center;
+	}
+	p {
+		margin-top: 0;
+	}
+	.contactLabel {
+		float: left;
+		width: 110px;
+		@include bp(mini) {
+			float: none;
+		}
+	}
+	.wpcf7 {
+		clear: both;
+	}
+	input,
+	textarea {
+		padding: 1%;
+		margin-top: 1%;
+		width: 100%;
+	}
+	input[type=submit] {
+		background: none;
+	   border: 3px solid $mainColor;
+	   border-radius: 7px;
+	   transition: 0.5s all;
+	   &:hover {
+			background: $mainColor;
+			color: $white;
+	   }
 	}
 }
+
+

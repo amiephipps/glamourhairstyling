@@ -25,6 +25,18 @@ get_header(); ?>
 		</div>
 	</section>
 
+	<section id="about" class="about">
+		<div class="aboutContainer container">
+			<div>
+				<?php the_content(); ?>
+			</div>	
+			<div class="special">
+				<h2>- Special -</h2>
+				<p><?php the_field( 'special' ); ?></p>
+			</div>
+		</div>
+	</section>
+
 	<section id="services" class="services">
 		<div class="cuts">
 			<h1>CUTS</h1>
@@ -75,29 +87,20 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<section id="about" class="about">
-		<div class="aboutContainer container">
-			<div>
-				<?php the_content(); ?>
-			</div>	
-			<div class="special">
-				<h2>- Special -</h2>
-				<p><?php the_field( 'special' ); ?></p>
-			</div>
-		</div>
-	</section>
-
 	<section id="contact" class="contact">
 		<div class="container contact--container">
 		<h2>CONTACT</h2>
 		<div>
-			<section class="footer--section1">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.003714989703!2d-79.30678008517825!3d43.66889255943491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cbf64bf1e369%3A0x1eacc0aba545a38a!2s1909+Queen+St+E%2C+Toronto%2C+ON+M4L+1H3!5e0!3m2!1sen!2sca!4v1457405990863" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<section class="contact--section1">
+				<iframe style="pointer-events:none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7347.16339752812!2d-79.4677206005556!3d46.326404380279584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d29aaa71385776d%3A0x500d1912daaab755!2s123+Delaware+Ave%2C+North+Bay%2C+ON+P1B+6Z6!5e0!3m2!1sen!2sca!4v1457488425075" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>			
 			</section>
 			
-			<section class="footer--section2">
-				<p>PHONE: 705-477-1308</p>
-				<p>ADDRESS: Located inside Locs Taper Scissors</p>
+			<section class="contact--section2 clearfix">
+				<p class="contactLabel">PHONE:</p><p>705-477-1308</p>
+				<p class="contactLabel">ADDRESS:</p>
+				<p>123 Delaware Ave North<br/>
+				North Bay, Ontario P1B 6Z6<br/>
+				Located inside Locks Taper Scissors</p>
 				<?php 
 					$contactForm = get_field( 'contact_form' );
 					echo do_shortcode( $contactForm );

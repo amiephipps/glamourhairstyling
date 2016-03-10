@@ -1,29 +1,41 @@
-/*================================
-=            ## Footer          =
-================================*/
-
 footer {
-	height: 350px;
 	background: $grey;
-	border-top: 1px solid $white;
-	box-shadow: 0 0 39px -6px black;
-	.footer--copyright {
-		position: relative; // for back to top button
-		height: 50px;
-		border-top: 1px solid white;
-		background: $mainColor;
-		p {
-			margin: 0;
-			text-align: center;
-			line-height: 50px;
-			a {
-				transition: 0.5s;
-				display: inline-block;
-				&:hover {
-					color: $grey;
-				}
-			}
+	padding: 3rem 0;
+	.footer--sections {
+		@extend .flexParent;
+		justify-content: space-between;
+		align-items: center;
+		@include bp(tiny) {
+			flex-direction: column;
+		}
+	}
+	section p {
+		color: $white;
+		margin: 0.3em 0;
+		text-align: center;
+	}
+	a {
+		transition: 0.5s;
+		display: block;
+		&:hover {
+			color: $mainColor;
+		}
+	}
+	.footer--section2 {
+		a {
+			text-decoration: underline;
+		}
+	}
+	.footer--section3 span {
+		display: inline-block;
+		width: 140px;
+		@include bp(little) {
+			width: 115px;
+		}
+	}
+	@include bp(tiny) {
+		.footer--section3 {
+			padding: 10% 0;
 		}
 	}
 }
-/*=====  End of Footer  ======*/

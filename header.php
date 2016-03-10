@@ -21,7 +21,7 @@
 </head>
  
 <body <?php body_class(); ?>>
-
+<div class="wrapper">
    <header id="home">
       <a href="#main" class="screen-reader-text" id="skiptomain"><?php esc_html_e('Skip to content', 'master_theme'); ?></a>
 
@@ -33,14 +33,14 @@
             </a>
          </h1>
          
-         <p>705-888-9999</p>
+         <p class="number">705-888-9999</p>
          
          <nav role="navigation">
             <i class="fa fa-bars fa-3x hamburger"></i>
             <ul class="siteMenu">
                <li><a href="#home" class="smoothScroll">Home</a></li>
-               <li><a href="#services"  class="smoothScroll">Services</a></li>
                <li><a href="#about"  class="smoothScroll">About</a></li>
+               <li><a href="#services"  class="smoothScroll">Services</a></li>
                <li><a href="#contact"  class="smoothScroll">Contact</a></li>
             </ul>
          </nav>  

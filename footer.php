@@ -7,28 +7,28 @@
 ?>
 	 
 <footer class="footer">
-	<div class="footer--sections">
-		<section class="footer--section1">
-			<nav class="footer--copyright">
-			   <p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></a> | <a href="http://amiephipps.com">Developed with love by Amie</a></p>
-			</nav>
-		</section>
-
+	<div class="footer--sections container">
 		<section class="footer--section2">
-			<p>CONNECT</p>
-			<p>Facebook</p>
-			<p>Email</p>
+			<p>CONNECT WITH ME</p>
+			<p><a href="http://www.facebook.com" target="_blank">Facebook</a></p>
+			<p><a href="mailto:glamourgirlhairstyling@gmail.com">Email</a></p>
 		</section>
 
 		<section class="footer--section3">
 			<p>HOURS</p>
-			<p>Tuesday: 9:00am - 8:00pm</p>
-			<p>Wednesday: 9:00am - 8:00pm</p>
-			<p>Thursday: 9:00am - 8:00pm</p>
-			<p>Friday: 9:00am - 8:00pm</p>
-			<p>Saturday: 9:00am - 8:00pm</p>
-			<p>Sunday: Closed</p>
-			<p>Monday: Closed</p>
+			<p><span>Tuesday:</span> 9:00am - 8:00pm</p>
+			<p><span>Wednesday:</span> 9:00am - 8:00pm</p>
+			<p><span>Thursday:</span> 9:00am - 8:00pm</p>
+			<p><span>Friday:</span> 9:00am - 8:00pm</p>
+			<p><span>Saturday:</span> 9:00am - 8:00pm</p>
+			<p><span>Sunday:</span> Closed</p>
+			<p><span>Monday:</span> Closed</p>
+		</section>
+
+		<section class="footer--section1">
+			<nav class="footer--copyright">
+			   <p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></a><a href="http://amiephipps.com">Developed by Amie</a></p>
+			</nav>
 		</section>
 	</div>
 </footer><!-- #colophon -->
@@ -42,5 +42,6 @@
 </script>
 
 <?php wp_footer(); ?> 
+<div> <!-- wrapper -->
 </body>
 </html>
