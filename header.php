@@ -33,7 +33,7 @@
             </a>
          </h1>
          
-         <p class="number">705-888-9999</p>
+         <p class="number">Call or text for apt: 705-477-1308</p>
          
          <nav role="navigation">
             <i class="fa fa-bars fa-3x hamburger"></i>

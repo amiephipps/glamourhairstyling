@@ -37,6 +37,12 @@ get_header(); ?>
 		</div>
 	</section>
 
+	<section class="gallery">
+		<?php
+			echo photo_gallery(1);
+		 ?>
+	</section>
+
 	<section id="services" class="services">
 		<div class="cuts">
 			<h1>CUTS</h1>
@@ -98,8 +104,8 @@ get_header(); ?>
 			<section class="contact--section2 clearfix">
 				<p class="contactLabel">PHONE:</p><p>705-477-1308</p>
 				<p class="contactLabel">ADDRESS:</p>
-				<p>123 Delaware Ave North<br/>
-				North Bay, Ontario P1B 6Z6<br/>
+				<p>123 Delaware Ave N<br/>
+				North Bay, ON P1B 6Z6<br/>
 				Located inside Locks Taper Scissors</p>
 				<?php 
 					$contactForm = get_field( 'contact_form' );
